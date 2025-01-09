@@ -43,3 +43,7 @@ variable "template_name" {
   type        = string
   default     = "ubuntu-20.04-template"
 }
+
+variable "vm_hostname" {
+  default = "k8s-master"
+}

@@ -16,12 +16,12 @@ provider "esxi" {
 }
 
 # Cloud Init Configuration
-locals {
-  master_userdata = templatefile("userdata-master.tpl", {
-    #HOSTNAME = var.vm_hostname
-    HOSTNAME = "k8s-master"
+data "template_file" "Master" {
+  template = file("userdata-master.tpl")
+  vars = {
+    HOSTNAME = var.vm_hostname
     HELLO    = "Hello World!"
-  })
+  }
 }
 
 # Master Node Configuration
@@ -49,7 +49,7 @@ resource "esxi_guest" "k8s_master" {
 
   guestinfo = {
     "userdata.encoding" = "gzip+base64"
-    "userdata"         = base64gzip(local.master_userdata)
+    "userdata"         = base64gzip(data.template_file.Master.rendered)
   }
 
   provisioner "local-exec" {
