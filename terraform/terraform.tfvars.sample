@@ -1,0 +1,30 @@
+#------------------------------------------------------------------------------
+# ESXi Host Connection Settings
+#------------------------------------------------------------------------------
+# Hostname or IP address of your ESXi host
+esxi_hostname = "esxi.local"
+
+# SSH port for ESXi host connection
+esxi_hostport = 22
+
+# SSL port for ESXi host connection
+esxi_hostssl = 443
+
+# ESXi host credentials
+esxi_username = "root"
+esxi_password = "your-esxi-password"
+
+#------------------------------------------------------------------------------
+# Storage and Network Configuration
+#------------------------------------------------------------------------------
+# Name of the datastore where VMs will be created
+datastore = "datastore1"
+
+# Network configuration (uncomment and modify if needed)
+#network_name = "Kubernetes Network"
+
+#------------------------------------------------------------------------------
+# VM Template Configuration  
+#------------------------------------------------------------------------------
+# Name of the VM template to use as base for new VMs
+template_name = "ubuntu-20.04-template"

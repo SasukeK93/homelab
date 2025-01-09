@@ -1,0 +1,35 @@
+# Local .terraform directories
+**/.terraform/*
+
+# Terraform variable files
+*.tfvars
+*.tfvars.json
+
+# Exception for sample variable files
+!terraform.tfvars.sample
+
+# Local terraform state
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI configuration files
+.terraformrc
+terraform.rc
+
+# Provider lock file
+.terraform.lock.hcl
+
+# Ignore local development files
+*.backup
+*.bak
+*.tmp
